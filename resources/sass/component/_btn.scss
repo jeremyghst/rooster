@@ -1,0 +1,160 @@
+.btn{
+    border: none;
+    background: transparent;
+    height: 35px; 
+    @include flex(row, center, center);
+
+    .icon{
+        @include flex(row, center, center);
+        font-size: 20px;
+        pointer-events: none;
+    }
+    span{
+        pointer-events: none;
+    }
+}
+
+.btn_squar{
+    width: auto;
+    border-radius: 5px;
+    padding: 0 25px;
+    
+    .icon{
+        margin-right: 5px;
+    }
+}
+
+.btn_round{
+    width: 35px;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+
+.btn_blue{
+    color: $white;
+    background-color: $blue;
+
+    &:hover{
+        background-color: $blue;
+        color: $dark_grey;
+    }
+}
+
+.btn_red{
+    color: $white;
+    background-color: $red;
+
+    &:hover{
+        background-color: $red;
+        color: $dark_grey;
+    }
+}
+
+.btn_yellow{
+    color: $white;
+    background-color: $yellow;
+
+    &.btn_menu{
+        background-color: transparent;
+    }
+    
+    &.current_page{
+        background-color: $yellow_transparent;
+        border: solid 1px $yellow;
+    }
+
+    &:hover{
+        color: $dark_grey;
+        background-color: $yellow;
+
+        &.btn_menu{
+            border: solid 1px $yellow;
+        }
+    }
+}
+
+.button-flex-item{
+    width: 300px;
+    margin-left: auto;
+
+    @include flex(column, flex-start, flex-end);
+
+    button:first-child{
+        margin-bottom: 20px;
+    }
+
+    button{
+        width: 100%;
+    }
+}
+
+
+.btn-flex-close{
+    @include flex(row, flex-end, center);
+    height: 65px;
+    margin-right: -25px;
+
+    .btn_close{
+        font-size: 30px;
+        padding: 5px;
+    }
+}
+
+.switch_daypart_button{
+    position: fixed;
+    display: none;
+    top: 360px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: $light_grey;
+    color: white;
+    border: none;
+
+    .icon{
+        font-size: 25px;
+    }
+
+    &.visible{
+        @include flex(row, center, center);
+    }
+
+    &:hover{
+        color: $mid_grey;
+    }
+}
+
+#switch_daypart_left_button{
+    left: 50px;
+}
+
+#switch_daypart_right_button{
+    right: 50px;
+}
+
+#newRoomBtn{
+    margin-bottom: 10px;
+}
+
+#manageTrackBtn, #manageMedientBtn{
+    @include flex(row, flex-start, center);
+    color: $blue;
+    padding-bottom: 0;
+    border-radius: 0;
+    font-size: 16px;
+
+    .icon{
+        margin-left: 5px;
+        font-size: 16px;
+    }
+
+    &:hover{
+        text-decoration: none;
+        border-bottom: solid 1px $blue;
+    }
+}
+
+#manageTrackBtn{
+    margin-right: 10px;
+}

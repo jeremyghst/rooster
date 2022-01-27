@@ -1,0 +1,216 @@
+#roosters{
+    #ochtend, #middag{
+        display: none;
+
+        table{
+            border-spacing: 0 2px;
+            border-collapse: separate;
+
+            thead{
+                tr{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    width: 1040px;
+                    
+                    th{
+                        text-align: center;
+
+                        div{
+                            @include flex(row, center, center);
+                            width: 175px;
+                            height: 48px;
+                            font-size: 16px;
+                            background-color: $light_grey;
+                        }
+                        &:first-child{
+                            background-color: transparent;
+                            color: $blue;
+                            font-weight: 500;
+                            width: 84px;
+                            font-size: 18px;
+                        }
+                    }
+
+                    &.room_naam{
+                        @include flex(row, flex-start, center);
+                        background-color: $dark_grey;
+                        height: 42px;
+                        th{
+                            color: $white;
+                            text-align: left;
+                            padding-left: 10px;
+                        }
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    @include flex(row, space-between, center);
+                    margin: 0 0 2px 0;
+                    width: 1040px;
+                    height: 30px;
+                    background-color: $light_grey;
+
+                    td{
+                        @include flex(row, center, center);
+                        height: 30px;
+                        width: 175px;
+
+                        div{
+                            @include flex(row, center, center);
+                            position: relative;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            height: 24px;
+                            width: 169px;
+                            color: $dark_grey;
+                            border: solid 2px $white;
+
+                            &.bezet{
+                                background-color: $white;
+
+                                &.reserved{
+                                    background-color: $mid_grey;
+                                    color: $offwhite;
+                                    border: solid 2px $mid_grey;
+
+                                    .icon{
+                                        @include flex(row, center, center);
+                                        position: absolute;
+                                        left: 5px;
+                                        height: 100%;
+                                        color: $red;
+                                    }
+                                }
+                                
+                                .sl, .ee{
+                                    position: absolute;
+                                    transform: rotate(45deg);
+                                    height: 50px;
+                                    width: 50px;
+                                    background-color: orange;
+                                }
+                                .sl{
+                                    top: -35px;
+                                    left: -35px;
+                                }
+                            
+                                .ee{
+                                    bottom: -35px;
+                                    left: auto;
+                                    right: -35px;
+                                }
+                            }
+                            &.vrij{
+                                background-color: $green;
+                                border: solid 2px $green;
+                                color: $white;
+                            }
+                            &.inactive{
+                                border: dashed 1px $dark_grey;
+                            }
+
+                            &.selected{
+                                opacity: 50%;
+                            }
+
+                        }
+
+                        &:first-child{
+                            justify-content: flex-start;
+                            width: 84px;
+                            padding-left: 10px;
+                        }
+                    }
+                }
+            }
+
+            &:first-child{
+                margin-bottom: 30px;
+            }
+        }
+
+        &.visible{
+            display: block;
+        }
+    }
+}
+
+#rooms{
+    border-spacing: 0 2px;
+    border-collapse: separate;
+
+    thead{
+        tr{ 
+            th{
+                text-align: center;
+                font-size: 12px;
+                text-align: left;
+                width: 150px;
+                padding-left: 10px;
+                border-bottom: solid 1px $mid_grey;
+
+                &:nth-child(2){
+                    width: 250px;
+                }
+            }
+        }
+    }
+
+    tbody{
+        tr{
+            td{
+                text-align: center;
+                font-size: 14px;
+                padding-left: 10px;
+
+                text-align: left;
+                background-color: $mid_grey;
+
+                &:first-child{
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+                &:last-child{
+                    border-top-right-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+#room{
+    border-spacing: 0 2px;
+    border-collapse: separate;
+
+    thead{
+        tr{ 
+            th{
+                text-align: center;
+                font-size: 12px;
+                text-align: left;
+                width: 150px;
+                padding-left: 10px;
+                color: $mid_grey;
+                border-bottom: solid 1px $mid_grey;
+
+                &:nth-child(2){
+                    width: 250px;
+                }
+            }
+        }
+    }
+
+    tbody{
+        tr{
+            td{
+                text-align: center;
+                font-size: 14px;
+                padding-left: 10px;
+                text-align: left;
+            }
+        }
+    }
+}

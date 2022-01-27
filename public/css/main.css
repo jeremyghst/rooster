@@ -1,0 +1,958 @@
+@import url(https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap);
+html {
+  scrollbar-width: none;
+}
+
+body {
+  position: relative;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  scrollbar-width: none;
+  background-color: #ffffff;
+  color: #515151;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.btn {
+  border: none;
+  background: transparent;
+  height: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.btn .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  pointer-events: none;
+}
+.btn span {
+  pointer-events: none;
+}
+
+.btn_squar {
+  width: auto;
+  border-radius: 5px;
+  padding: 0 25px;
+}
+.btn_squar .icon {
+  margin-right: 5px;
+}
+
+.btn_round {
+  width: 35px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.btn_blue {
+  color: #ffffff;
+  background-color: #5f9fab;
+}
+.btn_blue:hover {
+  background-color: #5f9fab;
+  color: #515151;
+}
+
+.btn_red {
+  color: #ffffff;
+  background-color: #E56A6A;
+}
+.btn_red:hover {
+  background-color: #E56A6A;
+  color: #515151;
+}
+
+.btn_yellow {
+  color: #ffffff;
+  background-color: #fac032;
+}
+.btn_yellow.btn_menu {
+  background-color: transparent;
+}
+.btn_yellow.current_page {
+  background-color: #fac03280;
+  border: solid 1px #fac032;
+}
+.btn_yellow:hover {
+  color: #515151;
+  background-color: #fac032;
+}
+.btn_yellow:hover.btn_menu {
+  border: solid 1px #fac032;
+}
+
+.button-flex-item {
+  width: 300px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.button-flex-item button:first-child {
+  margin-bottom: 20px;
+}
+.button-flex-item button {
+  width: 100%;
+}
+
+.btn-flex-close {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 65px;
+  margin-right: -25px;
+}
+.btn-flex-close .btn_close {
+  font-size: 30px;
+  padding: 5px;
+}
+
+.switch_daypart_button {
+  position: fixed;
+  display: none;
+  top: 360px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #00000020;
+  color: white;
+  border: none;
+}
+.switch_daypart_button .icon {
+  font-size: 25px;
+}
+.switch_daypart_button.visible {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.switch_daypart_button:hover {
+  color: #B1B1B1;
+}
+
+#switch_daypart_left_button {
+  left: 50px;
+}
+
+#switch_daypart_right_button {
+  right: 50px;
+}
+
+#newRoomBtn {
+  margin-bottom: 10px;
+}
+
+#manageTrackBtn, #manageMedientBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: #5f9fab;
+  padding-bottom: 0;
+  border-radius: 0;
+  font-size: 16px;
+}
+#manageTrackBtn .icon, #manageMedientBtn .icon {
+  margin-left: 5px;
+  font-size: 16px;
+}
+#manageTrackBtn:hover, #manageMedientBtn:hover {
+  text-decoration: none;
+  border-bottom: solid 1px #5f9fab;
+}
+
+#manageTrackBtn {
+  margin-right: 10px;
+}
+
+#roosters #ochtend, #roosters #middag {
+  display: none;
+}
+#roosters #ochtend table, #roosters #middag table {
+  border-spacing: 0 2px;
+  border-collapse: separate;
+}
+#roosters #ochtend table thead tr, #roosters #middag table thead tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1040px;
+}
+#roosters #ochtend table thead tr th, #roosters #middag table thead tr th {
+  text-align: center;
+}
+#roosters #ochtend table thead tr th div, #roosters #middag table thead tr th div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 175px;
+  height: 48px;
+  font-size: 16px;
+  background-color: #00000020;
+}
+#roosters #ochtend table thead tr th:first-child, #roosters #middag table thead tr th:first-child {
+  background-color: transparent;
+  color: #5f9fab;
+  font-weight: 500;
+  width: 84px;
+  font-size: 18px;
+}
+#roosters #ochtend table thead tr.room_naam, #roosters #middag table thead tr.room_naam {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #515151;
+  height: 42px;
+}
+#roosters #ochtend table thead tr.room_naam th, #roosters #middag table thead tr.room_naam th {
+  color: #ffffff;
+  text-align: left;
+  padding-left: 10px;
+}
+#roosters #ochtend table tbody tr, #roosters #middag table tbody tr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 2px 0;
+  width: 1040px;
+  height: 30px;
+  background-color: #00000020;
+}
+#roosters #ochtend table tbody tr td, #roosters #middag table tbody tr td {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 175px;
+}
+#roosters #ochtend table tbody tr td div, #roosters #middag table tbody tr td div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 24px;
+  width: 169px;
+  color: #515151;
+  border: solid 2px #ffffff;
+}
+#roosters #ochtend table tbody tr td div.bezet, #roosters #middag table tbody tr td div.bezet {
+  background-color: #ffffff;
+}
+#roosters #ochtend table tbody tr td div.bezet.reserved, #roosters #middag table tbody tr td div.bezet.reserved {
+  background-color: #B1B1B1;
+  color: #efefef;
+  border: solid 2px #B1B1B1;
+}
+#roosters #ochtend table tbody tr td div.bezet.reserved .icon, #roosters #middag table tbody tr td div.bezet.reserved .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 5px;
+  height: 100%;
+  color: #E56A6A;
+}
+#roosters #ochtend table tbody tr td div.bezet .sl, #roosters #ochtend table tbody tr td div.bezet .ee, #roosters #middag table tbody tr td div.bezet .sl, #roosters #middag table tbody tr td div.bezet .ee {
+  position: absolute;
+  transform: rotate(45deg);
+  height: 50px;
+  width: 50px;
+  background-color: orange;
+}
+#roosters #ochtend table tbody tr td div.bezet .sl, #roosters #middag table tbody tr td div.bezet .sl {
+  top: -35px;
+  left: -35px;
+}
+#roosters #ochtend table tbody tr td div.bezet .ee, #roosters #middag table tbody tr td div.bezet .ee {
+  bottom: -35px;
+  left: auto;
+  right: -35px;
+}
+#roosters #ochtend table tbody tr td div.vrij, #roosters #middag table tbody tr td div.vrij {
+  background-color: #5FAB76;
+  border: solid 2px #5FAB76;
+  color: #ffffff;
+}
+#roosters #ochtend table tbody tr td div.inactive, #roosters #middag table tbody tr td div.inactive {
+  border: dashed 1px #515151;
+}
+#roosters #ochtend table tbody tr td div.selected, #roosters #middag table tbody tr td div.selected {
+  opacity: 50%;
+}
+#roosters #ochtend table tbody tr td:first-child, #roosters #middag table tbody tr td:first-child {
+  justify-content: flex-start;
+  width: 84px;
+  padding-left: 10px;
+}
+#roosters #ochtend table:first-child, #roosters #middag table:first-child {
+  margin-bottom: 30px;
+}
+#roosters #ochtend.visible, #roosters #middag.visible {
+  display: block;
+}
+
+#rooms {
+  border-spacing: 0 2px;
+  border-collapse: separate;
+}
+#rooms thead tr th {
+  text-align: center;
+  font-size: 12px;
+  text-align: left;
+  width: 150px;
+  padding-left: 10px;
+  border-bottom: solid 1px #B1B1B1;
+}
+#rooms thead tr th:nth-child(2) {
+  width: 250px;
+}
+#rooms tbody tr td {
+  text-align: center;
+  font-size: 14px;
+  padding-left: 10px;
+  text-align: left;
+  background-color: #B1B1B1;
+}
+#rooms tbody tr td:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#rooms tbody tr td:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+#room {
+  border-spacing: 0 2px;
+  border-collapse: separate;
+}
+#room thead tr th {
+  text-align: center;
+  font-size: 12px;
+  text-align: left;
+  width: 150px;
+  padding-left: 10px;
+  color: #B1B1B1;
+  border-bottom: solid 1px #B1B1B1;
+}
+#room thead tr th:nth-child(2) {
+  width: 250px;
+}
+#room tbody tr td {
+  text-align: center;
+  font-size: 14px;
+  padding-left: 10px;
+  text-align: left;
+}
+
+.content {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+#loginBody {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #5f9fab;
+  background-repeat: no-repeat;
+  background-size: auto 100vh;
+  background-position: center left;
+}
+#loginBody #loginMain {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#loginBody #loginMain article {
+  height: 95vh;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#loginBody #loginMain article h2 {
+  width: 100%;
+  margin-bottom: 20px;
+}
+#loginBody #loginMain article h2 img {
+  width: 100%;
+}
+#loginBody #loginMain article h3 {
+  text-align: left;
+  color: white;
+  font-weight: normal;
+  font-size: 1.3em;
+}
+#loginBody #loginMain article form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#loginBody #loginMain article form * {
+  margin: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#loginBody #loginMain article form *:first-child {
+  margin-top: 0;
+}
+#loginBody #loginMain article form *:last-child {
+  margin-bottom: 0;
+}
+#loginBody #loginMain article form div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+#loginBody #loginMain article form div label {
+  display: inline-block;
+  height: auto;
+  width: 40px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: white;
+  margin: 0;
+}
+#loginBody #loginMain article form div input {
+  background-color: #5f9fab;
+  border: solid 1px white;
+  color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 5px;
+  margin: 0;
+}
+#loginBody #loginMain article form #loginBtn {
+  background-color: #fac032;
+  padding: 10px 50px;
+  border: none;
+  border-radius: 5px;
+  color: #515151;
+  justify-self: flex-end;
+  margin-left: auto;
+}
+#loginBody #loginMain article form #loginBtn:hover {
+  background-color: #fac03280;
+  color: #515151;
+}
+#loginBody #loginMain footer {
+  width: 100%;
+  height: 50px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+#loginBody #loginMain footer small {
+  margin-right: 2vw;
+}
+
+#main_article .content {
+  margin-top: 65px;
+}
+#main_article .content h2 {
+  margin-bottom: 60px;
+}
+#main_article .content h3 {
+  margin: 20px 0;
+}
+#main_article .content #heading_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+#main_article .content #heading_bar h2 {
+  margin-bottom: 0px;
+}
+#main_article .content #heading_bar h2 a {
+  color: #515151;
+  text-decoration: none;
+}
+#main_article .content #heading_bar #button_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #515151;
+}
+#header .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#header .content h1 {
+  font-size: 18px;
+  font-weight: normal;
+  color: #ffffff;
+}
+#header .content h1 a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  color: inherit;
+}
+#header .content h1 a #logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+}
+
+#header_nav.nav ul, #main_nav.nav ul {
+  margin: 0;
+}
+#header_nav.nav ul li a, #main_nav.nav ul li a {
+  color: inherit;
+}
+#header_nav.nav ul li:first-child a, #main_nav.nav ul li:first-child a {
+  margin-left: 0;
+}
+
+#header_nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#header_nav ul li .btn {
+  margin-left: 25px;
+}
+#header_nav ul li:first-child .btn {
+  margin-left: 0;
+}
+#header_nav ul #logout-form {
+  display: none;
+}
+
+#main_nav {
+  background-color: #efefef;
+}
+#main_nav .content {
+  height: 65px;
+}
+#main_nav .content ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  height: 100%;
+}
+#main_nav .content ul li a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  height: 40px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 65px;
+  background-color: #00000020;
+}
+#main_nav .content ul li a.active {
+  background-color: #ffffff;
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}

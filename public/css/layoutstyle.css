@@ -1,0 +1,21 @@
+.navbar-bg-spectrum {
+    background-color: #515151;
+}
+
+.navbar-brand {
+    color: white;
+}
+
+.otherLinks {
+    float: right;
+}
+
+.otherLinks > a {
+    margin: 0px 10px 0px 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.otherLinks > a:hover {
+    color: rgb(255, 255, 0);
+}

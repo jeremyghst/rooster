@@ -1,0 +1,30 @@
+#main_article{
+    .content{
+        margin-top: 65px;
+
+        h2{
+           margin-bottom: 60px;
+        }
+
+        h3{
+            margin: 20px 0;
+        }
+
+        #heading_bar{
+            @include flex(row, space-between, center);
+            margin-bottom: 60px;
+
+            h2{
+                margin-bottom: 0px;
+                a{
+                    color: $dark_grey;
+                    text-decoration: none;
+                }
+            }
+
+            #button_bar{
+                @include flex(row, flex-start, flex-end);
+            }
+        }
+    }
+}

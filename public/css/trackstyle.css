@@ -1,0 +1,33 @@
+.bezet {
+    background-color: white;
+}
+
+.vrij {
+    background-color: green;
+}
+
+/*  alleen startsLater */
+.sl {
+    background-color: silver;
+}
+/* alleen endsEarlier */
+.ee {
+    background-color: slategray;
+}
+/* startsLater en endsEarlier */
+.slee {
+    background-color: springgreen;
+}
+
+.reserved {
+    background-color: red;
+}
+
+td {
+    width: 100px;
+    text-align: center;
+}
+
+.active {
+    color: brown;
+}

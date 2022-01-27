@@ -1,0 +1,27 @@
+#header{
+    @include flex(row, center, center);
+    height: 60px;
+    background-color: $dark_grey;
+    
+    .content{
+        @include flex(row, space-between, center);
+
+        h1 {
+            font-size: 18px;
+            font-weight: normal;
+            color: $white;
+
+            a{
+                @include flex(row, center, center);
+                height: 35px;
+                color: inherit;
+
+                #logo{
+                    @include flex(row, center, center);
+                    height: 35px;
+                    width: 35px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,100 @@
+#loginBody{
+  width: 100vw;
+  height: 100vh;
+  @include flex(row, center, center);
+  background-color: $blue;
+  // background-image: url("./../images/Logo Lamp.png");
+  background-repeat: no-repeat;
+  background-size: auto 100vh;
+  background-position: center left;
+
+  #loginMain{
+    width: 100%;
+    height: 100vh;
+    @include flex(column, center, center);
+
+    article{
+      height: 95vh;
+      padding: 50px;
+      @include flex(column, center, flex-start);
+      
+      h2{
+        width: 100%;
+        margin-bottom: 20px;
+
+        img{
+          width: 100%;
+        }
+      }
+      h3{
+        text-align: left;
+        color: white;
+        font-weight: normal;
+        font-size: 1.3em;
+      }
+      form{
+        @include flex(column, center, flex-start);
+
+        *{
+          margin: 10px 0;
+          @include flex(row, flex-start, center);
+
+          &:first-child{
+            margin-top: 0;
+          }
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+        div{
+          @include flex(row, flex-start, stretch);
+          
+          label{
+            display: inline-block;
+            height: auto;
+            width: 40px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            background-color: white;
+            margin: 0;
+          }
+          input{
+            background-color: $blue;
+            border: solid 1px white;
+            color: white;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding: 5px;
+            margin: 0;
+          }
+        }
+
+        #loginBtn{
+          background-color: $yellow;
+          padding: 10px 50px;
+          border: none;
+          border-radius: 5px;
+          color: $dark_grey;
+          justify-self: flex-end;
+          margin-left: auto;
+
+          &:hover{
+            background-color: $yellow_transparent;
+            color: $dark_grey;
+          }
+        }
+      }
+    }
+
+    footer{
+      width: 100%;
+      height: 50px;
+      color: white;
+      @include flex(row, flex-end, center);
+      
+      small{
+        margin-right: 2vw;
+      }
+    }
+  }
+}
