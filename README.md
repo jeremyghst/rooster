@@ -1,14 +1,18 @@
-##Disconnect authentication + second database
+#Disconnect authentication + second database
 
-### ./routes/web.php
+## ./routes/web.php
 Remove/comment:
 
+```
 Auth::routes();
 Route::middleware(['auth'])->group(function () {
 }
+```
 
-### ./resources/views/base/layout.blade.php
+## ./resources/views/base/layout.blade.php
 Remove/comment:
+
+```
 <li>
     <button class="btn btn_squar btn_red" formaction="{{route('logout')}}"
     onclick="event.preventDefault();
@@ -20,10 +24,13 @@ Remove/comment:
 <form id="logout-form" action="{{ route('logout') }}" method="POST">
     @csrf
 </form>
+```
 
-### ./app/Models/User.php
+## ./app/Models/User.php
 Remove/comment:
 
+```
 protected $table = 'user';
 protected $connection = 'mysql2';
 public $timestamps = false;
+```
