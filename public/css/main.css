@@ -391,9 +391,6 @@ li {
 #room tbody tr td.hidden {
   display: none;
 }
-#room tbody tr td:last-child {
-  padding-left: 0px;
-}
 
 .content {
   width: 1280px;
