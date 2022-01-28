@@ -20,10 +20,10 @@
         </nav>
     </header>
     
-    <button id="switch_daypart_left_button" class="switch_daypart_button" value="0">
+    <button id="switch_daypart_button_middag" class="switch_daypart_button" value="0">
         <i class="fas fa-chevron-left icon"></i>
     </button>
-    <button id="switch_daypart_right_button" class="switch_daypart_button" value="1">
+    <button id="switch_daypart_button_ochtend" class="switch_daypart_button" value="1">
         <i class="fas fa-chevron-right icon"></i>
     </button>
 

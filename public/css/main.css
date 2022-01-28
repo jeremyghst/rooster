@@ -156,11 +156,11 @@ li {
   color: #B1B1B1;
 }
 
-#switch_daypart_left_button {
+#switch_daypart_button_middag {
   left: 50px;
 }
 
-#switch_daypart_right_button {
+#switch_daypart_button_ochtend {
   right: 50px;
 }
 
