@@ -32,12 +32,12 @@
             <nav id="header_nav" class="nav">
                 <ul>
                     <li>
-                        <a href="/tracks" class="btn btn_round btn_yellow btn_menu {{Request::is("tracks") || Request::is("track/*")? 'current_page' : ''}}"> 
+                        <a href="/tracks" class="btn btn_round btn_yellow btn_menu clearSS {{Request::is("tracks") || Request::is("track/*")? 'current_page' : ''}}"> 
                             <img src="{{ asset('images/rooster-icon.svg') }}" alt="roosters" class="icon">
                         </a>
                     </li>
                     <li>
-                        <a href="/rooms" class="btn btn_round btn_yellow btn_menu {{Request::is("rooms") ||  Request::is("room/*")? 'current_page' : ''}}">
+                        <a href="/rooms" class="btn btn_round btn_yellow btn_menu clearSS {{Request::is("rooms") ||  Request::is("room/*")? 'current_page' : ''}}">
                             <img src="{{ asset('images/settings-icon.svg') }}" alt="" class="icon">
                         </a>
                     </li>

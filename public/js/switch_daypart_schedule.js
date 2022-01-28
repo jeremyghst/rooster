@@ -3,7 +3,6 @@
 const morning_schedule = document.getElementById('ochtend');
 const afternoon_schedule = document.getElementById('middag');
 
-
 const button_left = document.getElementById('switch_daypart_button_middag');
 const button_right = document.getElementById('switch_daypart_button_ochtend');
 
@@ -12,6 +11,7 @@ switch_daypart_buttons.forEach(button => {
     button.addEventListener('click', switch_daypart_schedule);
 })
 
+//sessionStorage to remember last viewed daypart
 if(!sessionStorage.getItem('daypart')){
     morning_schedule.classList.add('visible');
     button_right.classList.add('visible');
@@ -19,6 +19,14 @@ if(!sessionStorage.getItem('daypart')){
     document.getElementById(sessionStorage.getItem('daypart')).classList.add('visible');
     document.getElementById("switch_daypart_button_" + sessionStorage.getItem('daypart')).classList.add('visible');
 }
+
+//Empty sessionStorage when  navigation through the app
+const clearSS_btn = Array.from(document.getElementsByClassName('clearSS'));
+clearSS_btn.forEach(btn => {
+    btn.addEventListener('click', function(){
+        sessionStorage.clear();
+    })
+})
 
 function switch_daypart_schedule(e){
     let value;

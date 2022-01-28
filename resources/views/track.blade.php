@@ -11,7 +11,7 @@
                     @foreach ($tracks as $trk)
                     @if($trk->isActive)
                         <li>
-                            <a href="/track/{{ $trk->id }}" class="@if ($trk->id == $track->id) active @endif">{{ $trk->name }}</a>    
+                            <a href="/track/{{ $trk->id }}" class="@if ($trk->id == $track->id) active @endif clearSS">{{ $trk->name }}</a>    
                         </li>
                     @endif
                 @endforeach
