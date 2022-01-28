@@ -12,12 +12,12 @@ switch_daypart_buttons.forEach(button => {
     button.addEventListener('click', switch_daypart_schedule);
 })
 
-if(!localStorage.getItem('daypart')){
+if(!sessionStorage.getItem('daypart')){
     morning_schedule.classList.add('visible');
     button_right.classList.add('visible');
 } else {
-    document.getElementById(localStorage.getItem('daypart')).classList.add('visible');
-    document.getElementById("switch_daypart_button_" + localStorage.getItem('daypart')).classList.add('visible');
+    document.getElementById(sessionStorage.getItem('daypart')).classList.add('visible');
+    document.getElementById("switch_daypart_button_" + sessionStorage.getItem('daypart')).classList.add('visible');
 }
 
 function switch_daypart_schedule(e){
@@ -34,7 +34,7 @@ function switch_daypart_schedule(e){
         button_left.classList.remove('visible');
 
         morning_schedule.classList.add('visible');
-        localStorage.setItem("daypart", "ochtend");
+        sessionStorage.setItem("daypart", "ochtend");
 
         afternoon_schedule.classList.remove('visible');
     } else if (Number(value) === 1){
@@ -42,7 +42,7 @@ function switch_daypart_schedule(e){
         button_right.classList.remove('visible');
 
         afternoon_schedule.classList.add('visible');
-        localStorage.setItem("daypart", "middag");
+        sessionStorage.setItem("daypart", "middag");
 
         morning_schedule.classList.remove('visible');
     }
