@@ -312,8 +312,8 @@ li {
   border: dashed 1px #515151;
 }
 #roosters #ochtend table tbody tr td div.selected, #roosters #ochtend table tbody tr td div.reserved.selected, #roosters #middag table tbody tr td div.selected, #roosters #middag table tbody tr td div.reserved.selected {
-  background-color: #E56A6A;
-  border: solid 1px #E56A6A;
+  background-color: #5f9fab;
+  border: solid 1px #5f9fab;
   color: #ffffff;
 }
 #roosters #ochtend table tbody tr td:first-child, #roosters #middag table tbody tr td:first-child {
@@ -389,6 +389,9 @@ li {
 }
 #room tbody tr td.hidden {
   display: none;
+}
+#room tbody tr:hover {
+  opacity: 60%;
 }
 
 .content {

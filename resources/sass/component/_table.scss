@@ -113,8 +113,8 @@
                             }
 
                             &.selected, &.reserved.selected{
-                                background-color: $red;
-                                border: solid 1px $red;
+                                background-color: $blue;
+                                border: solid 1px $blue;
                                 color: $white;
                             }
 
@@ -224,6 +224,9 @@
                 &.hidden{
                     display: none;
                 }
+            }
+            &:hover{
+                opacity: 60%;
             }
         }
     }
