@@ -163,12 +163,28 @@ document.addEventListener('keyup', function(e) {
     }
 });
 
+//Stops cntrl + click to select all text from table
+$('#roosters').mousedown(function (event) {
+    if (event.ctrlKey) {
+        event.preventDefault();
+    }
+});
+
 function fillTrackModal(target){
-    document.getElementById('medients').value = Number(target.dataset.user);
-    document.getElementById('startsLater').checked = Number(target.dataset.startsLater);
-    document.getElementById('endsEarlier').checked = Number(target.dataset.endsEarlier);
-    document.getElementById('reserved').checked = Number(target.dataset.reserved);
-    document.getElementById('turnOff').checked = Number(target.dataset.inactive);
+    if(target.tagName == "DIV"){
+        document.getElementById('medients').value = Number(target.dataset.user);
+        document.getElementById('startsLater').checked = Number(target.dataset.startsLater);
+        document.getElementById('endsEarlier').checked = Number(target.dataset.endsEarlier);
+        document.getElementById('reserved').checked = Number(target.dataset.reserved);
+        document.getElementById('turnOff').checked = Number(target.dataset.inactive);
+    } else {
+        //preselects last selected cell in modal
+        document.getElementById('medients').value = Number(document.getElementById(fields[fields.length - 1]).dataset.user);
+        document.getElementById('startsLater').checked = Number(document.getElementById(fields[fields.length - 1]).dataset.startsLater);
+        document.getElementById('endsEarlier').checked = Number(document.getElementById(fields[fields.length - 1]).dataset.endsEarlier);
+        document.getElementById('reserved').checked = Number(document.getElementById(fields[fields.length - 1]).dataset.reserved);
+        document.getElementById('turnOff').checked = Number(document.getElementById(fields[fields.length - 1]).dataset.inactive);
+    }
 }
 
 //als de modal gesloten wordt, wordt de fields array weer leeggemaakt
