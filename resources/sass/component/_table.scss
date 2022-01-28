@@ -5,6 +5,7 @@
         table{
             border-spacing: 0 2px;
             border-collapse: separate;
+            margin-bottom: 30px;
 
             thead{
                 tr{
@@ -111,8 +112,10 @@
                                 border: dashed 1px $dark_grey;
                             }
 
-                            &.selected{
-                                opacity: 50%;
+                            &.selected, &.reserved.selected{
+                                background-color: $red;
+                                border: solid 1px $red;
+                                color: $white;
                             }
 
                         }
@@ -126,8 +129,8 @@
                 }
             }
 
-            &:first-child{
-                margin-bottom: 30px;
+            &:last-child{
+                margin-bottom: 60px;
             }
         }
 
@@ -210,6 +213,10 @@
                 font-size: 14px;
                 padding-left: 10px;
                 text-align: left;
+
+                &.hidden{
+                    display: none;
+                }
             }
         }
     }

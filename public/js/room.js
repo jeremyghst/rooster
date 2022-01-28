@@ -56,10 +56,11 @@ function setSpanText(field, errorArray)
 
 function fillModifyModal(workstation)
 {
-    document.getElementById('modalId').value = workstation.id;
-    document.getElementById('nummer2').value = workstation.number;
-    document.getElementById('omschrijving2').value = workstation.description;
-    document.getElementById('systeem2').value = workstation.system;
+    const wrksttn = JSON.parse(workstation);
+    document.getElementById('modalId').value = wrksttn.id;
+    document.getElementById('nummer2').value = wrksttn.number;
+    document.getElementById('omschrijving2').value = wrksttn.description;
+    document.getElementById('systeem2').value = wrksttn.system;
 }
 
 function modifyWorkstation()

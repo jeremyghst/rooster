@@ -197,6 +197,7 @@ li {
 #roosters #ochtend table, #roosters #middag table {
   border-spacing: 0 2px;
   border-collapse: separate;
+  margin-bottom: 30px;
 }
 #roosters #ochtend table thead tr, #roosters #middag table thead tr {
   display: flex;
@@ -310,16 +311,18 @@ li {
 #roosters #ochtend table tbody tr td div.inactive, #roosters #middag table tbody tr td div.inactive {
   border: dashed 1px #515151;
 }
-#roosters #ochtend table tbody tr td div.selected, #roosters #middag table tbody tr td div.selected {
-  opacity: 50%;
+#roosters #ochtend table tbody tr td div.selected, #roosters #ochtend table tbody tr td div.reserved.selected, #roosters #middag table tbody tr td div.selected, #roosters #middag table tbody tr td div.reserved.selected {
+  background-color: #E56A6A;
+  border: solid 1px #E56A6A;
+  color: #ffffff;
 }
 #roosters #ochtend table tbody tr td:first-child, #roosters #middag table tbody tr td:first-child {
   justify-content: flex-start;
   width: 84px;
   padding-left: 10px;
 }
-#roosters #ochtend table:first-child, #roosters #middag table:first-child {
-  margin-bottom: 30px;
+#roosters #ochtend table:last-child, #roosters #middag table:last-child {
+  margin-bottom: 60px;
 }
 #roosters #ochtend.visible, #roosters #middag.visible {
   display: block;
@@ -378,6 +381,9 @@ li {
   padding-left: 10px;
   text-align: left;
 }
+#room tbody tr td.hidden {
+  display: none;
+}
 
 .content {
   width: 1280px;
@@ -392,6 +398,7 @@ li {
   justify-content: center;
   align-items: center;
   background-color: #5f9fab;
+  background-image: url("/../images/login_logo.png");
   background-repeat: no-repeat;
   background-size: auto 100vh;
   background-position: center left;
@@ -415,6 +422,7 @@ li {
 #loginBody #loginMain article h2 {
   width: 100%;
   margin-bottom: 20px;
+  color: white;
 }
 #loginBody #loginMain article h2 img {
   width: 100%;

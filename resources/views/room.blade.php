@@ -18,7 +18,6 @@
             <table id="room">
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>NUMMER</th>
                         <th>OMSCHRIJVING</th>
                         <th>SYSTEEM</th>
@@ -28,7 +27,7 @@
                     @foreach ($room->workstations as $workstation)
                         
                             <tr class="rowclick">
-                                <td>{{ $workstation->id }}</td>
+                                <td class="hidden">{{ $workstation->id }}</td>
                                 <td>{{ $workstation->number }}</td>
                                 <td>{{ $workstation->description }}</td>
                                 <td>{{ $workstation->system }}</td>
