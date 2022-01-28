@@ -19,14 +19,14 @@ use App\Http\Controllers\WorkstationController;
 */
 
 Auth::routes();
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/', function () {
-        return redirect()->route('home');
+        return redirect('/tracks');
     });
 
     Route::get('/test', [TestController::class, 'getAll']);
     Route::get('/track', [TrackController::class, 'getAll']);
-    Route::get('/tracks', [TrackController::class, 'getFirst'])->name('home');
+    Route::get('/tracks', [TrackController::class, 'getFirst']);
     Route::put('/tracks', [TrackController::class, 'setActive']);
     Route::post('/tracks', [TrackController::class, 'store']);
     Route::get('/room/{room}', [RoomController::class, 'getById']);

@@ -390,9 +390,6 @@ li {
 #room tbody tr td.hidden {
   display: none;
 }
-#room tbody tr:hover {
-  opacity: 60%;
-}
 
 .content {
   width: 1280px;

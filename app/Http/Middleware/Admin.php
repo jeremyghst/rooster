@@ -19,7 +19,9 @@ class Admin
     {
         if(Auth::check() && Auth::user()->is_admin == 1){
             return $next($request);
-          }
-          return redirect('/');
+        } else {
+            Auth::logout();
+            return redirect('/');
+        }
     }
 }
