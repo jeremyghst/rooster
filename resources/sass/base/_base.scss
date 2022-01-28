@@ -9,4 +9,6 @@ body{
     scrollbar-width: none;
     background-color: $white;
     color: $dark_grey;
+    min-width: 1380px;
+    min-height: 100vh;
 }

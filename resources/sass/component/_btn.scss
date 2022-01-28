@@ -116,7 +116,7 @@
 }
 
 .switch_daypart_button{
-    position: fixed;
+    position: absolute;
     display: none;
     top: 360px;
     height: 50px;
@@ -141,10 +141,18 @@
 
 #switch_daypart_button_middag{
     left: 50px;
+
+    @media all and (max-width: 1000px){
+        left: 0;
+    }
 }
 
 #switch_daypart_button_ochtend{
     right: 50px;
+
+    @media all and (max-width: 1000px){
+        right: 0;
+    }
 }
 
 #newRoomBtn{

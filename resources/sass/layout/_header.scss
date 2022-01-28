@@ -1,6 +1,7 @@
 #header{
     @include flex(row, center, center);
     height: 60px;
+    width: 100%;
     background-color: $dark_grey;
     
     .content{
