@@ -182,10 +182,13 @@
                 &:last-child{
                     border-top-right-radius: 5px;
                     border-bottom-right-radius: 5px;
+                    padding-left: 0;
                 }
             }
             &:hover{
-                opacity: 60%;
+                td{
+                    background-color: $light_grey;
+                }
             }
         }
     }
@@ -224,9 +227,10 @@
                 &.hidden{
                     display: none;
                 }
-            }
-            &:hover{
-                opacity: 60%;
+
+                &:last-child{
+                    padding-left: 0px;
+                }
             }
         }
     }
