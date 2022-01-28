@@ -31,12 +31,25 @@ function getName(td, workstation, day, dagdeel)
     {
         td.classList.add('vrij');
         td.textContent = 'vrij';
+        td.dataset.inactive = 0;
+        td.dataset.user = 0;
+        td.dataset.startsLater = 0;
+        td.dataset.endsEarlier = 0;
+        td.dataset.reserved = 0;
+
+
         return;
     }
     if(dd.isActive == 0)
     {
         td.classList.add('inactive');
         td.textContent = "+";
+        td.dataset.inactive = 1;
+        td.dataset.user = 0;
+        td.dataset.startsLater = 0;
+        td.dataset.endsEarlier = 0;
+        td.dataset.reserved = 0;
+
         return; 
     }
     for(let i = 0; i < medients.length; i++)
@@ -44,6 +57,12 @@ function getName(td, workstation, day, dagdeel)
         if(medients[i].id == id)
         {
             td.classList.add('bezet');
+            td.dataset.user = id;
+            td.dataset.inactive = 0;
+            td.dataset.startsLater = 0;
+            td.dataset.endsEarlier = 0;
+            td.dataset.reserved = 0;
+
 
             //first letter of lastname (and not of the prefix);
             // const lastname = medients[i].user_achter_naam.split(" ");
@@ -53,6 +72,7 @@ function getName(td, workstation, day, dagdeel)
             if(dd.isReserved == 1)
             {
                 td.classList.add('reserved');
+                td.dataset.reserved = 1;
 
                 const icon = document.createElement('i');
                 icon.classList.add('fas', 'fa-parking', 'icon');
@@ -64,9 +84,11 @@ function getName(td, workstation, day, dagdeel)
             {
                 const triangle1 = document.createElement('div');
                 triangle1.classList.add('sl');
-
+                td.dataset.startsLater = 1;
+                
                 const triangle2 = document.createElement('div');
                 triangle2.classList.add('ee');
+                td.dataset.endsEarlier = 1;
 
                 td.append(triangle1, triangle2);
                 return;
@@ -75,6 +97,8 @@ function getName(td, workstation, day, dagdeel)
             {
                 const triangle = document.createElement('div');
                 triangle.classList.add('sl');
+                td.dataset.startsLater = 1;
+
                 td.appendChild(triangle);
                 
                 return;
@@ -83,6 +107,8 @@ function getName(td, workstation, day, dagdeel)
             {
                 const triangle = document.createElement('div');
                 triangle.classList.add('ee');
+                td.dataset.endsEarlier = 1;
+
                 td.appendChild(triangle);
                 return;
             }
@@ -119,22 +145,32 @@ document.addEventListener('click', function (e) {
 
              //Visualize select
             e.target.classList.add('selected');
+            fillTrackModal(e.target);
             $('#trackModal').modal('show');
         }
         return;
     }
 });
-
 
 document.addEventListener('keyup', function(e) {
     if(e.key == 'Control')
     {
         if(fields.length != 0){
+            fillTrackModal(e.target);
             $('#trackModal').modal('show');
         }
         return;
     }
 });
+
+function fillTrackModal(target){
+    console.log(target);
+    document.getElementById('medients').value = Number(target.dataset.user);
+    document.getElementById('startsLater').checked = Number(target.dataset.startsLater);
+    document.getElementById('endsEarlier').checked = Number(target.dataset.endsEarlier);
+    document.getElementById('reserved').checked = Number(target.dataset.reserved);
+    document.getElementById('turnOff').checked = Number(target.dataset.inactive);
+}
 
 //als de modal gesloten wordt, wordt de fields array weer leeggemaakt
 $('#trackModal').on('hidden.bs.modal', function (e) {
