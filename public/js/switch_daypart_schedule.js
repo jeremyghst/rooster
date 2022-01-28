@@ -20,7 +20,7 @@ if(!sessionStorage.getItem('daypart')){
     document.getElementById("switch_daypart_button_" + sessionStorage.getItem('daypart')).classList.add('visible');
 }
 
-//Empty sessionStorage when  navigation through the app
+//Empty sessionStorage when  navigating through the app
 const clearSS_btn = Array.from(document.getElementsByClassName('clearSS'));
 clearSS_btn.forEach(btn => {
     btn.addEventListener('click', function(){
