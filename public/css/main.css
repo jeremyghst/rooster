@@ -321,6 +321,9 @@ li {
   width: 84px;
   padding-left: 10px;
 }
+#roosters #ochtend table tbody tr td:hover, #roosters #middag table tbody tr td:hover {
+  opacity: 30%;
+}
 #roosters #ochtend table:last-child, #roosters #middag table:last-child {
   margin-bottom: 60px;
 }
@@ -358,6 +361,9 @@ li {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+#rooms tbody tr:hover {
+  opacity: 60%;
+}
 
 #room {
   border-spacing: 0 2px;
@@ -383,6 +389,9 @@ li {
 }
 #room tbody tr td.hidden {
   display: none;
+}
+#room tbody tr:hover {
+  opacity: 60%;
 }
 
 .content {

@@ -125,6 +125,10 @@
                             width: 84px;
                             padding-left: 10px;
                         }
+
+                        &:hover{
+                            opacity: 30%;
+                        }
                     }
                 }
             }
@@ -180,6 +184,9 @@
                     border-bottom-right-radius: 5px;
                 }
             }
+            &:hover{
+                opacity: 60%;
+            }
         }
     }
 }
@@ -217,6 +224,9 @@
                 &.hidden{
                     display: none;
                 }
+            }
+            &:hover{
+                opacity: 60%;
             }
         }
     }
