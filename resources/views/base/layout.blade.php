@@ -46,7 +46,7 @@
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                             <i class="far fa-clock icon"></i>
-                            Uitklokken
+                            Uitloggen
                         </button>
                     </li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST">

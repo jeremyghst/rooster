@@ -193,8 +193,8 @@
                 
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn_squar btn_red btn-secondary" data-dismiss="modal">Sluiten</button>
-              <button onclick="sendData()" type="button" class="btn btn_squar btn_blue btn-danger">Opslaan</button>
+              <button type="button" class="btn btn_squar btn_red" data-dismiss="modal">Sluiten</button>
+              <button onclick="sendData()" type="button" class="btn btn_squar btn_blue">Opslaan</button>
             </div>
           </div>
         </div>

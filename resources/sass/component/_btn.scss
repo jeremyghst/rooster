@@ -12,6 +12,10 @@
     span{
         pointer-events: none;
     }
+
+    &.vert_margin{
+        margin: 10px 0;   
+    }
 }
 
 .btn_squar{
@@ -37,6 +41,16 @@
 
     &:hover{
         background-color: $blue;
+        color: $dark_grey;
+    }
+}
+
+.btn_green{
+    color: $white;
+    background-color: $green;
+
+    &:hover{
+        background-color: $green;
         color: $dark_grey;
     }
 }

@@ -51,6 +51,9 @@ li {
 .btn span {
   pointer-events: none;
 }
+.btn.vert_margin {
+  margin: 10px 0;
+}
 
 .btn_squar {
   width: auto;
@@ -73,6 +76,15 @@ li {
 }
 .btn_blue:hover {
   background-color: #5f9fab;
+  color: #515151;
+}
+
+.btn_green {
+  color: #ffffff;
+  background-color: #5FAB76;
+}
+.btn_green:hover {
+  background-color: #5FAB76;
   color: #515151;
 }
 

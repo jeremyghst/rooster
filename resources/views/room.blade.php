@@ -31,8 +31,8 @@
                                 <td>{{ $workstation->number }}</td>
                                 <td>{{ $workstation->description }}</td>
                                 <td>{{ $workstation->system }}</td>
-                                <td><button onclick="fillModifyModal('{{ $workstation }}')"type="button" data-toggle="modal" data-target="#modifyModal" class="btn btn_squar btn_yellow btn-success"><i class="fas fa-pen"></i></button></td>
-                                <td><button onclick="fillDeleteModal('{{ $workstation->id }}')" type="button" data-toggle="modal" data-target="#deleteModal" class="btn btn_squar btn_red btn-danger"><i class="fas fa-trash-alt"></i></button></td>
+                                <td><button onclick="fillModifyModal('{{ $workstation }}')"type="button" data-toggle="modal" data-target="#modifyModal" class="btn btn_squar btn_yellow"><i class="fas fa-pen"></i></button></td>
+                                <td><button onclick="fillDeleteModal('{{ $workstation->id }}')" type="button" data-toggle="modal" data-target="#deleteModal" class="btn btn_squar btn_red"><i class="fas fa-trash-alt"></i></button></td>
                             </tr>
                         
                     @endforeach
@@ -71,8 +71,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn_squar btn_red btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i></button>
-                    <button onclick="makeWorkstation()" type="button" class="btn btn_squar btn_blue btn-primary"><i class="fas fa-check icon"></i> Toevoegen</button>
+                    <button type="button" class="btn btn_squar btn_red" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                    <button onclick="makeWorkstation()" type="button" class="btn btn_squar btn_blue"><i class="fas fa-check icon"></i> Toevoegen</button>
                 </div>
             </div>
         </div>
@@ -109,8 +109,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn_squar btn_red btn-secondary" data-dismiss="modal"><i class="fas fa-times"></i></button>
-                    <button onclick="modifyWorkstation()" type="button" class="btn btn_squar btn_blue btn-primary"><i class="fas fa-check icon"></i> Aanpassen</button>
+                    <button type="button" class="btn btn_squar btn_red" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                    <button onclick="modifyWorkstation()" type="button" class="btn btn_squar btn_blue"><i class="fas fa-check icon"></i> Aanpassen</button>
                 </div>
             </div>
         </div>
@@ -130,8 +130,8 @@
               <p>Weet je zeker dat je deze werkplek wil verwijderen?</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn_squar btn_yellow btn-secondary" data-dismiss="modal">Close</button>
-              <button onclick="deleteWorkstation()" type="button" class="btn btn_squar btn_red btn-danger">Verwijderen</button>
+              <button type="button" class="btn btn_squar btn_yellow" data-dismiss="modal">Close</button>
+              <button onclick="deleteWorkstation()" type="button" class="btn btn_squar btn_red">Verwijderen</button>
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@
               </button>
             </div>
             <div class="modal-body">
-                <button class="btn btn-primary" data-dismiss="modal" data-target="#newTrackModal" data-toggle="modal">Nieuwe Track</button>
+                <button class="btn btn_squar btn_green vert_margin" data-dismiss="modal" data-target="#newTrackModal" data-toggle="modal">Nieuwe Track</button>
                 <div id="tracks">
                 @foreach($tracks as $track)
                     <div class="form-check form-switch">
@@ -159,8 +159,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn_squar btn_yellow btn-secondary" data-dismiss="modal">Close</button>
-                <button onclick="activeTracks()" type="button" class="btn btn_squar btn_blue btn-danger">Toepassen</button>
+                <button type="button" class="btn btn_squar btn_yellow" data-dismiss="modal">Close</button>
+                <button onclick="activeTracks()" type="button" class="btn btn_squar btn_blue">Toepassen</button>
             </div>
           </div>
         </div>
@@ -184,8 +184,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button onclick="makeTrack()" type="button" class="btn btn-primary">Opslaan</button>
+              <button type="button" class="btn btn_squar btn_yellow" data-dismiss="modal">Close</button>
+              <button onclick="makeTrack()" type="button" class="btn btn_squar btn_blue">Opslaan</button>
             </div>
           </div>
         </div>
