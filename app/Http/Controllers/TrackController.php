@@ -94,4 +94,21 @@ class TrackController extends Controller
         }
 
     }
+
+    public function destroy($track)
+    {
+        $track = Track::find($track);
+        $rooms = $track->rooms()->get();
+
+        foreach($rooms as $room){
+            $room->workstations()->delete();
+        }
+
+        $track->rooms()->delete();
+
+        if($track->delete())
+        {
+            return response()->json(['success' => 'track deleted']);
+        }
+    }
 }

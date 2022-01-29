@@ -39,4 +39,5 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/ws', [WorkstationController::class, 'updateJSON']);
     Route::delete('/workstation/{workstation}', [WorkstationController::class, 'destroy']);
     Route::get('/track/{track}', [TrackController::class, 'getById']);
+    Route::delete('/track/{track}', [TrackController::class, 'destroy']);
 });

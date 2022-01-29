@@ -55,5 +55,13 @@ function makeTrack()
 
 function deleteTrack(track)
 {
-    alert('Function is under construction. Trying to delete:' + " " + track)
+    axios({
+        method: 'delete',
+        url: '/track/' + track
+      }).then(function (response) {
+        if(response.data.success)
+        {
+            location.reload(true);
+        }        
+      });
 }
