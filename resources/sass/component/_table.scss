@@ -1,6 +1,9 @@
 #roosters{
+    #ochtend{
+        margin-bottom: 125px;
+    }
     #ochtend, #middag{
-        display: none;
+        display: block;
 
         table{
             border-spacing: 0 2px;
@@ -136,10 +139,6 @@
             &:last-child{
                 margin-bottom: 60px;
             }
-        }
-
-        &.visible{
-            display: block;
         }
     }
 }

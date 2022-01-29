@@ -146,48 +146,6 @@ li {
   padding: 5px;
 }
 
-.switch_daypart_button {
-  position: absolute;
-  display: none;
-  top: 360px;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: #00000020;
-  color: white;
-  border: none;
-}
-.switch_daypart_button .icon {
-  font-size: 25px;
-}
-.switch_daypart_button.visible {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.switch_daypart_button:hover {
-  color: #B1B1B1;
-}
-
-#switch_daypart_button_middag {
-  left: 50px;
-}
-@media all and (max-width: 1000px) {
-  #switch_daypart_button_middag {
-    left: 0;
-  }
-}
-
-#switch_daypart_button_ochtend {
-  right: 50px;
-}
-@media all and (max-width: 1000px) {
-  #switch_daypart_button_ochtend {
-    right: 0;
-  }
-}
-
 #newRoomBtn {
   margin-bottom: 10px;
 }
@@ -215,8 +173,11 @@ li {
   margin-right: 10px;
 }
 
+#roosters #ochtend {
+  margin-bottom: 125px;
+}
 #roosters #ochtend, #roosters #middag {
-  display: none;
+  display: block;
 }
 #roosters #ochtend table, #roosters #middag table {
   border-spacing: 0 2px;
@@ -350,9 +311,6 @@ li {
 }
 #roosters #ochtend table:last-child, #roosters #middag table:last-child {
   margin-bottom: 60px;
-}
-#roosters #ochtend.visible, #roosters #middag.visible {
-  display: block;
 }
 
 #rooms {

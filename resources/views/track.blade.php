@@ -19,13 +19,6 @@
             </div>
         </nav>
     </header>
-    
-    <button id="switch_daypart_button_middag" class="switch_daypart_button" value="0">
-        <i class="fas fa-chevron-left icon"></i>
-    </button>
-    <button id="switch_daypart_button_ochtend" class="switch_daypart_button" value="1">
-        <i class="fas fa-chevron-right icon"></i>
-    </button>
 
     <article id="main_article">
         <div class="content">
@@ -210,5 +203,4 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="{{ asset('js/track.js') }}"></script>
-    <script src="{{asset('js/switch_daypart_schedule.js')}}"></script>
 @endpush

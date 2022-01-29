@@ -115,46 +115,6 @@
     }
 }
 
-.switch_daypart_button{
-    position: absolute;
-    display: none;
-    top: 360px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background-color: $light_grey;
-    color: white;
-    border: none;
-
-    .icon{
-        font-size: 25px;
-    }
-
-    &.visible{
-        @include flex(row, center, center);
-    }
-
-    &:hover{
-        color: $mid_grey;
-    }
-}
-
-#switch_daypart_button_middag{
-    left: 50px;
-
-    @media all and (max-width: 1000px){
-        left: 0;
-    }
-}
-
-#switch_daypart_button_ochtend{
-    right: 50px;
-
-    @media all and (max-width: 1000px){
-        right: 0;
-    }
-}
-
 #newRoomBtn{
     margin-bottom: 10px;
 }

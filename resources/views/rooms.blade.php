@@ -244,5 +244,4 @@
 @push('scripts')
     <script src="js/rooms.js"></script>
     <script src="js/trackmng.js"></script>
-    <script src="js/switch_daypart_schedule.js"></script>
 @endpush
