@@ -245,6 +245,9 @@ function CreatePDFfromHTML() {
     let canvas_image_height = HTML_Height;
     let totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
 
+    let ochtend = document.getElementById('ochtend');
+    let middag = document.getElementById('middag');
+
     html2canvas($("#roosters")[0], {scale:2}).then(function (canvas) {
         let imgData = canvas.toDataURL("image/jpeg", 1.0);
         let pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
@@ -254,5 +257,7 @@ function CreatePDFfromHTML() {
             pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
         }
         pdf.save("roosters.pdf");
+        ochtend.style.display = 'block';
+        middag.style.display = 'block';
     });
 }
