@@ -226,7 +226,7 @@
             </div>
             <div class="modal-body">
                 <input type="hidden" value="" id="deleteTrackModalId">
-              <p>Weet je zeker dat je deze track wil verwijderen?</p>
+              <p>Weet je zeker dat je de track: <span id="deleteTrackModalName"></span> met al zijn lokalen en werkplekken voorgoed wilt verwijderen?</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn_squar btn_yellow" data-dismiss="modal">Close</button>
@@ -236,6 +236,9 @@
         </div>
     </div>      
     {{-- einde modal voor aanmaken track --}}
+    <script>
+        let all_tracks = @json($tracks);
+    </script>
 @endsection
 
 @push('scripts')

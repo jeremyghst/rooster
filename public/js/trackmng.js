@@ -55,15 +55,27 @@ function makeTrack()
 
 function fillDeleteTrackModal(id)
 {
+    let track_name;
+    Array.from(all_tracks).forEach(track => {
+        if(track.id == id){
+            track_name = track.name;
+        }
+    })
+
     document.getElementById('deleteTrackModalId').value = id;
+    document.getElementById('deleteTrackModalName').innerText = track_name;
 }
 
 function deleteTrack()
 {
-
-    if(confirm("Weet je zeker dat je deze track met zijn lokalen en werkplekken voorgoed wilt verwijderen?")){
-        let id = document.getElementById('deleteTrackModalId').value;
-
+    let id = document.getElementById('deleteTrackModalId').value;
+    let track_name = document.getElementById('deleteTrackModalName').innerText;
+    Array.from(all_tracks).forEach(track => {
+        if(track.id == id){
+            track_name = track.name;
+        }
+    })
+    if(confirm("Weet je zeker dat je de track: " + track_name + " met al zijn lokalen en werkplekken voorgoed wilt verwijderen?")){
         axios({
             method: 'delete',
             url: '/track/' + id
