@@ -245,7 +245,7 @@ function CreatePDFfromHTML() {
     let canvas_image_height = HTML_Height;
     let totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
 
-    html2canvas($("#rooster")[0], {scale:2}).then(function (canvas) {
+    html2canvas($("#roosters")[0], {scale:2}).then(function (canvas) {
         let imgData = canvas.toDataURL("image/jpeg", 1.0);
         let pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
         pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
