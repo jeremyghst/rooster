@@ -53,15 +53,25 @@ function makeTrack()
     });
 }
 
-function deleteTrack(track)
+function fillDeleteTrackModal(id)
 {
-    axios({
-        method: 'delete',
-        url: '/track/' + track
-      }).then(function (response) {
-        if(response.data.success)
-        {
-            location.reload(true);
-        }        
-      });
+    document.getElementById('deleteTrackModalId').value = id;
+}
+
+function deleteTrack()
+{
+
+    if(confirm("Weet je zeker dat je deze track met zijn lokalen en werkplekken voorgoed wilt verwijderen?")){
+        let id = document.getElementById('deleteTrackModalId').value;
+
+        axios({
+            method: 'delete',
+            url: '/track/' + id
+          }).then(function (response) {
+            if(response.data.success)
+            {
+                location.reload(true);
+            }        
+          });
+    }
 }

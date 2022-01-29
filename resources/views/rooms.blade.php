@@ -177,7 +177,7 @@
                     <div class="form-check form-switch track_div">
                         <input class="form-check-input" type="checkbox" id="track-{{ $track->id }}" @if($track->isActive) checked @endif>
                         <label class="form-check-label" for="track-{{ $track->id }}">{{ $track->name }}</label>
-                        <button onclick="deleteTrack('{{ $track->id }}')" type="button" data-toggle="modal" class="btn btn_squar"><i class="fas fa-trash-alt"></i></button>
+                        <button onclick="fillDeleteTrackModal('{{ $track->id }}')" type="button" data-dismiss="modal" data-toggle="modal" data-target="#deleteTrackModal" class="btn btn_squar"><i class="fas fa-trash-alt"></i></button>
                     </div>
                 @endforeach
                 </div>
@@ -210,6 +210,27 @@
             <div class="modal-footer">
             <button type="button" class="btn btn_squar btn_yellow" data-dismiss="modal">Close</button>
               <button onclick="makeTrack()" type="button" class="btn btn_squar btn_blue">Opslaan</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    {{--Modal voor verwijderen track--}}
+    <div class="modal fade" id="deleteTrackModal" tabindex="-1" role="dialog" aria-labelledby="deleteTrackModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteModalLabel">Verwijder</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" value="" id="deleteTrackModalId">
+              <p>Weet je zeker dat je deze track wil verwijderen?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn_squar btn_yellow" data-dismiss="modal">Close</button>
+              <button onclick="deleteTrack()" type="button" class="btn btn_squar btn_red">Verwijderen</button>
             </div>
           </div>
         </div>
