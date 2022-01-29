@@ -151,9 +151,10 @@
                 <button class="btn btn_squar btn_green vert_margin" data-dismiss="modal" data-target="#newTrackModal" data-toggle="modal">Nieuwe Track</button>
                 <div id="tracks">
                 @foreach($tracks as $track)
-                    <div class="form-check form-switch">
+                    <div class="form-check form-switch track_div">
                         <input class="form-check-input" type="checkbox" id="track-{{ $track->id }}" @if($track->isActive) checked @endif>
                         <label class="form-check-label" for="track-{{ $track->id }}">{{ $track->name }}</label>
+                        <button onclick="deleteTrack('{{ $track->id }}')" type="button" data-toggle="modal" class="btn btn_squar"><i class="fas fa-trash-alt"></i></button>
                     </div>
                 @endforeach
                 </div>
