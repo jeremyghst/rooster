@@ -1,0 +1,17 @@
+#searchbar{
+    @include flex(row, flex-start, center);
+    border: solid 1px $dark_grey;
+    border-radius: 5px;
+    overflow: hidden;
+
+    input{
+        border: none;
+        padding: 5px 10px;
+    }
+    .icon{
+        background-color: $mid_grey;
+        color: $white;
+        padding: 5px 10px;
+        font-size: 20px;
+    }
+}

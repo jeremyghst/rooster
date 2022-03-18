@@ -403,6 +403,26 @@ li {
   margin: 0 auto;
 }
 
+#searchbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border: solid 1px #515151;
+  border-radius: 5px;
+  overflow: hidden;
+}
+#searchbar input {
+  border: none;
+  padding: 5px 10px;
+}
+#searchbar .icon {
+  background-color: #B1B1B1;
+  color: #ffffff;
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
 #loginBody {
   width: 100vw;
   height: 100vh;

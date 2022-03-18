@@ -26,6 +26,10 @@
                 <h2>Weekrooster {{ $track->name }}</h2>
 
                 {{-- <button type="button" data-toggle="modal" data-target="#printModal" class=" -primary"><i class="fas fa-print"></i> Print Rooster</button> --}}
+                <div id="searchbar">
+                    <input type="text" id="searchBarInput" placeholder="Zoeken in medienten...">
+                    <i class="fas fa-search icon"></i>
+                </div>
                 <button class="btn btn_blue btn_squar" onclick="CreatePDFfromHTML()">
                     <div>
                         <i class="fas fa-print icon"></i>
@@ -77,7 +81,7 @@
                             
                             <tbody>
                                 @foreach ($room->workstations as $workstation)
-                                <tr id="workstation-ochtend-{{ $workstation->id }}">
+                                <tr id="workstation-ochtend-{{ $workstation->id }}" class="workstation">
                                     <td>{{ $room->abbreviation }}-{{ $workstation->number }}</td>
                                     <td><div id="ochtend-maandag-{{ $workstation->id }}"></div></td>
                                     <td><div id="ochtend-dinsdag-{{ $workstation->id }}"></div></td>
@@ -130,7 +134,7 @@
                             </thead>
                             <tbody>
                                 @foreach ($room->workstations as $workstation)
-                                <tr id="workstation-middag-{{ $workstation->id }}">
+                                <tr id="workstation-middag-{{ $workstation->id }}" class="workstation">
                                     <td>{{ $room->abbreviation }}-{{ $workstation->number }}</td>
                                     <td><div id="middag-maandag-{{ $workstation->id }}"></div></td>
                                     <td><div id="middag-dinsdag-{{ $workstation->id }}"></div></td>
@@ -203,4 +207,5 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
     <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
     <script src="{{ asset('js/track.js') }}"></script>
+    <script src="{{ asset('js/searchbar.js') }}"></script>
 @endpush
