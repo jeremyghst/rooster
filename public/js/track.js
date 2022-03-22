@@ -24,7 +24,7 @@
 //functie voor het vullen van een tabelcel
 function getName(td, workstation, day, dagdeel)
 {
-    
+    td.classList.add('cell');
     let dd = workstation.days[day][dagdeel];
     let id = dd.id;
     if(dd.isActive == 1 && dd.id == 0)
@@ -68,7 +68,7 @@ function getName(td, workstation, day, dagdeel)
             // const lastname = medients[i].user_achter_naam.split(" ");
             // td.textContent = medients[i].user_voor_naam + " " + lastname[lastname.length - 1][0];
 
-            td.textContent = medients[i].name;
+            td.textContent = medients[i].first_name;
             if(dd.isReserved == 1)
             {
                 td.classList.add('reserved');

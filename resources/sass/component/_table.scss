@@ -123,6 +123,10 @@
                                 color: $white;
                             }
 
+                            &.fadeout{
+                                opacity: 30%;
+                            }
+
                         }
 
                         &:first-child{

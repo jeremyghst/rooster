@@ -167,7 +167,7 @@
                     <select class="form-select" aria-label="medients" id="medients">
                         <option value="0">Vrij</option>
                         @foreach($medients as $medient)
-                        <option value="{{ $medient->id }}">{{ $medient->name }}</option>
+                        <option value="{{ $medient->id }}">{{ $medient->first_name }}</option>
                         @endforeach
                     </select>
                 </div>

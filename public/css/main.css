@@ -304,6 +304,9 @@ li {
   border: solid 1px #5f9fab;
   color: #ffffff;
 }
+#roosters #ochtend table tbody tr td div.fadeout, #roosters #middag table tbody tr td div.fadeout {
+  opacity: 30%;
+}
 #roosters #ochtend table tbody tr td:first-child, #roosters #middag table tbody tr td:first-child {
   justify-content: flex-start;
   width: 84px;

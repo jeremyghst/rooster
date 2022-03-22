@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Track;
 use App\Models\Room;
-use App\Models\Medient;
+use App\Models\User;
 use App\Models\Workstation;
 use Validator;
 
@@ -41,7 +41,7 @@ class TrackController extends Controller
             'track' => Track::find($track),
             'tracks' => Track::all(),
             'rooms' => Room::where('track_id', $track)->get(),
-            'medients' => Medient::all(),
+            'medients' => User::all(),
             'workstations' => $workstations
         ]); 
     }
